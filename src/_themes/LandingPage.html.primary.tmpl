@@ -1,0 +1,48 @@
+{{!master(layout/_master.tmpl)}}
+{{^_disableToc}}
+{{>partials/versions}}
+{{/_disableToc}}
+
+{{#sections}}
+  <h2>{{name}}</h2>
+  <div class="row row-cols-1 row-cols-md-{{#columns_md}}{{{columns_md}}}{{/columns_md}} row-cols-lg-{{#columns_max}}{{columns_max}}{{/columns_max}} g-4 mb-5 card-row-{{type}}">
+    {{#items}}
+      <div class="col">
+        {{#isTiles}}
+          <a href="{{href}}">
+        {{/isTiles}}
+        <div class="card h-100{{#isTextColumns}} border-0{{/isTextColumns}}{{^isTextColumns}} rounded-0{{/isTextColumns}}">
+          <div class="card-body d-flex flex-column">
+            {{#image_src}}
+              <a href="{{href}}" class="fromTemplate">
+                <img src="{{image_src}}" class="mb-3" role="presentation">
+              </a>
+            {{/image_src}}
+            {{#icon_src}}
+              <img src="{{icon_src}}" height="48" width="48" class="icon-image {{#isSvgIcon}}svg{{/isSvgIcon}} mb-3" role="presentation">
+            {{/icon_src}}
+            <div class="card-title">{{name}}</div>
+            <div class="card-text">{{{content}}}</div>
+            {{^isTiles}}
+              {{#href}}
+              <div class="mt-auto">
+                <a class="landing-cta" href="{{href}}">{{link_text}}</a>
+              </div>
+              {{/href}}
+              {{#hasLinks}}
+                <ul class="list-unstyled">
+                  {{#links}}
+                    <li class="card-text"><a class="landing-cta" href="{{href}}">{{link_text}}</a></li>
+                  {{/links}}
+                </ul>
+              {{/hasLinks}}
+            {{/isTiles}}
+          </div>
+        </div>
+        {{#isTiles}}
+        </a>
+        {{/isTiles}}
+      </div>
+    {{/items}}
+  </div>
+{{/sections}}

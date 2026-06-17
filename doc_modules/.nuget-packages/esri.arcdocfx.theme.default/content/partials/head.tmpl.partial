@@ -1,0 +1,31 @@
+{{!Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license.}}
+
+<head>
+  <meta charset="utf-8">
+  <!-- Adobe Analytics -->
+    <script src="//mtags.esri.com/tags.js" defer></script>
+  <!-- Adobe Analytics -->
+  {{#redirect_url}}
+    <meta http-equiv="refresh" content="0;URL='{{redirect_url}}'">
+  {{/redirect_url}}
+  {{^redirect_url}}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}} {{#_appTitle}}| {{_appTitle}} {{/_appTitle}}</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}} {{#_appTitle}}| {{_appTitle}} {{/_appTitle}}">
+    {{#_description}}<meta name="description" content="{{_description}}">{{/_description}}
+    {{#description}}<meta name="description" content="{{description}}">{{/description}}
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/public/assets/favicon/esri-favicon-light-180.png"/>
+    <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="32x32" href="/public/assets/favicon/esri-favicon-dark-32.png"/>
+    <link rel="icon" media="(prefers-color-scheme:light)" type="image/png" sizes="32x32" href="/public/assets/favicon/esri-favicon-light-32.png"/>
+    <link rel="icon" type="image/svg+xml" sizes="16x16 32x32 48x48 180x180" href="/public/assets/favicon/esri-favicon.svg"/>
+    <link rel="stylesheet" href="{{_rel}}styles/docfx.vendor.min.css">
+    <link rel="stylesheet" href="{{_rel}}styles/docfx.css">
+    <link rel="stylesheet" href="{{_rel}}styles/main.css">
+    <meta property="docfx:navrel" content="{{_navRel}}">
+    <meta property="docfx:tocrel" content="{{_tocRel}}">
+    {{#_noindex}}<meta name="searchOption" content="noindex">{{/_noindex}}
+    {{#_enableSearch}}<meta property="docfx:rel" content="{{_rel}}">{{/_enableSearch}}
+    {{#_enableNewTab}}<meta property="docfx:newtab" content="true">{{/_enableNewTab}}
+  {{/redirect_url}}
+</head>

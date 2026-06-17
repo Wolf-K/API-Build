@@ -1,0 +1,97 @@
+{{!master(layout/_master.tmpl)}}
+<h1 id="{{htmlId}}">
+  {{name}}
+</h1>
+
+{{>partials/versions}}
+{{>partials/affix-mobile}}
+
+{{#summary}}
+  <h2 id="summary">
+    {{__global.arcpySummary}}
+  </h2>
+
+  <div data-summary>
+    {{{summary}}}
+  </div>
+{{/summary}}
+
+{{#discussion}}
+  <h2 id="discussion">
+    {{__global.arcpyDiscussion}}
+  </h2>
+
+  {{{discussion}}}
+{{/discussion}}
+
+{{#has_operands}}
+  <h2 id="operands">
+    {{__global.arcpyOperands}}
+  </h2>
+
+  <table data-operands-table="">
+    <tr>
+      <th>
+        {{__global.arcpyOperand}}
+      </th>
+      <th>
+        {{__global.arcpyExplanation}}
+      </th>
+      <th>
+        {{__global.arcpyDataType}}
+      </th>
+    </tr>
+    {{#operands}}
+    <tr data-operand-name="{{name}}">
+      <td>
+        <p><span data-label="">{{name}}</span></p>
+      </td>
+      <td data-desc="">
+        {{{desc}}}
+      </td>
+      <td>
+        <p><span data-datatype="">{{{datatype}}}</span></p>
+      </td>
+    </tr>
+    {{/operands}}
+  </table>
+{{/has_operands}}
+
+
+<h2 id="environments">
+  {{__global.gpEnvironments}}
+</h2>
+{{#environments_md}}
+  {{{environments_md}}}
+  {{#env_special_cases_md}}
+  <h3 id="special-cases">
+    {{__global.gpSpecialCases}}
+  </h3> 
+    {{{env_special_cases_md}}}
+  {{/env_special_cases_md}}
+{{/environments_md}}
+{{^environments_md}}
+  <p>
+    {{{__global.arcpyOperatorNoEnvironments}}}
+  </p>
+{{/environments_md}}
+
+{{#has_code_samples}}
+  <h2 id="code-sample">
+    {{__global.arcpyCodeSample}}
+  </h2>
+  {{#code_samples}}
+    <div purpose="code-sample-title">
+      {{{title}}}
+    </div>
+    {{{desc}}}
+    {{{sample}}}
+  {{/code_samples}}
+{{/has_code_samples}}
+
+{{#related_topics_md}}
+  <h2 id="related-topics">
+    {{__global.gpRelatedTopics}}
+  </h2>
+  {{{related_topics_md}}}
+{{/related_topics_md}}

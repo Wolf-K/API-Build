@@ -1,0 +1,131 @@
+{
+    "$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+    "version": "1.0.0",
+    "id": "https://github.com/dotnet/docfx/schemas/landingpage.schema.json",
+    "title": "LandingPage",
+    "description": "The schema for landing page",
+    "type": "object",
+    "xrefProperties": [ "title", "description" ],
+    "properties": {
+        "lastModified": {
+            "type": "string",
+            "translate": false
+        },
+        "author": {
+            "type": "string",
+            "translate": false
+        },
+        "reviewer": {
+            "type": "string",
+            "translate": false
+        },
+        "watchlist": {
+            "type": "string",
+            "translate": false
+        },
+        "uid": {
+            "type": "string",
+            "contentType": "uid",
+            "translate": false
+        },
+        "title": {
+            "type": "string",
+            "translate": true
+        },
+        "description": {
+            "type": "string",
+            "translate": true
+        },
+        "sections": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "translate": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "translate": false
+                    },
+                    "isTextColumns": {
+                        "type": "boolean",
+                        "translate": false
+                    },
+                    "isTiles": {
+                        "type": "boolean",
+                        "translate": false
+                    },
+                    "isCards": {
+                        "type": "boolean",
+                        "translate": false
+                    },
+                    "columns_max": {
+                        "type": "integer",
+                        "translate": false
+                    },
+                    "columns_md": {
+                        "type": "integer",
+                        "translate": false
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "translate": true
+                                },
+                                "image_src": {
+                                    "type": "string",
+                                    "translate": false
+                                },
+                                "icon_src": {
+                                    "type": "string",
+                                    "translate": false
+                                },
+                                "isSvgIcon": {
+                                    "type": "boolean",
+                                    "translate": false
+                                },
+                                "content": {
+                                    "type": "string",
+                                    "contentType": "markdown",
+                                    "translate": true
+                                },
+                                "link_text": {
+                                    "type": "string",
+                                    "translate": true
+                                },
+                                "href": {
+                                    "type": "string",
+                                    "contentType": "href",
+                                    "translate": false
+                                },
+                                "links": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "link_text": {
+                                                "type": "string",
+                                                "translate": true
+                                            },
+                                            "href": {
+                                                "type": "string",
+                                                "contentType": "href",
+                                                "translate": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

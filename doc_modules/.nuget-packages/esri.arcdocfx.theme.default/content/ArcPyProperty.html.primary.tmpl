@@ -1,0 +1,78 @@
+{{!master(layout/_master.tmpl)}}
+<h1 id="{{htmlId}}">
+  {{name}}
+</h1>
+
+{{>partials/versions}}
+{{>partials/affix-mobile}}
+
+{{#summary}}
+  <h2 id="summary">
+    {{__global.arcpySummary}}
+  </h2>
+
+  <div data-summary>
+    {{{summary}}}
+  </div>
+{{/summary}}
+
+{{#has_properties}} 
+  <h2 id="properties">
+    {{__global.arcpyProperties}}
+  </h2>
+
+  <table data-properties-table="">
+    <tr>
+      <th>
+        {{__global.arcpyProperty}}
+      </th>
+      <th>
+        {{__global.arcpyExplanation}}
+      </th>
+      <th>
+        {{__global.arcpyDataType}}
+      </th>
+    </tr>
+    {{#properties}}
+    <tr data-property-name="{{name}}">
+      <td>
+        <p><span data-label="">{{name}}</span></p>
+        {{#read_only}}
+          {{__global.arcpyReadOnly}}
+        {{/read_only}}
+        {{^read_only}}
+          {{__global.arcpyReadWrite}}
+        {{/read_only}}
+      </td>
+      <td data-desc="">
+        {{#desc}}
+            {{{desc}}}
+        {{/desc}}
+      </td>
+      <td>
+        <p><span data-datatype="">{{datatype}}</span></p>
+      </td>
+    </tr>
+    {{/properties}}
+  </table>
+{{/has_properties}}
+
+{{#has_code_samples}}
+  <h2 id="code-sample">
+    {{__global.arcpyCodeSample}}
+  </h2>
+  {{#code_samples}}
+    <div purpose="code-sample-title">
+      {{{title}}}
+    </div>
+    {{{desc}}}
+    {{{sample}}}
+  {{/code_samples}}
+{{/has_code_samples}}
+
+{{#related_topics_md}}
+  <h2 id="related-topics">
+    {{__global.gpRelatedTopics}}
+  </h2>
+  {{{related_topics_md}}}
+{{/related_topics_md}}

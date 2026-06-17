@@ -1,0 +1,320 @@
+{
+  "$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+  "version": "1.0.0",
+  "id": "https://github.com/dotnet/docfx/schemas/arcpyclass.schema.json",
+  "title": "ArcPyClass",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "lastModified": {
+      "type": "string",
+      "translate": false
+    },
+    "author": {
+      "type": "string",
+      "translate": false
+    },
+    "reviewer": {
+      "type": "string",
+      "translate": false
+    },
+    "watchlist": {
+      "type": "string",
+      "translate": false
+    },
+    "sdlPubGuid": {
+      "type": "string",
+      "translate": false
+    },
+    "sdlTpcGuid": {
+      "type": "string",
+      "translate": false
+    },
+    "uid": {
+      "type": "string",
+      "contentType": "uid",
+      "translate": false
+    },
+    "title": {
+      "type": "string",
+      "translate": true
+    },
+    "name": {
+      "type": "string",
+      "translate": false
+    },
+    "module_name": {
+      "type": "string",
+      "translate": false
+    },
+    "description": {
+      "type": "string",
+      "translate": true
+    },
+    "summary": {
+      "type": "string",
+      "contentType": "markdown",
+      "translate": true
+    },
+    "discussion": {
+      "type": "string",
+      "contentType": "markdown",
+      "translate": true
+    },
+    "callable": {
+      "type": "boolean",
+      "translate": false
+    },
+    "class_syntax": {
+      "type": "string",
+      "contentType": "markdown",
+      "translate": false
+    },
+    "params": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "translate": false
+          },
+          "datatype": {
+            "type": "string",
+            "translate": false
+          },
+          "required": {
+            "type": "boolean",
+            "translate": false
+          },
+          "desc": {
+            "type": "string",
+            "contentType": "markdown",
+            "translate": true
+          }
+        }
+      }
+    },
+    "has_params": {
+      "type": "boolean",
+      "translate": false
+    },
+    "properties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "translate": false
+          },
+          "datatype": {
+            "type": "string",
+            "translate": false
+          },
+          "read_only": {
+            "type": "boolean",
+            "translate": false
+          },
+          "desc": {
+            "type": "string",
+            "contentType": "markdown",
+            "translate": true
+          }
+        }
+      }
+    },
+    "has_properties": {
+      "type": "boolean",
+      "translate": false
+    },
+    "methods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "translate": false
+          },
+          "summary": {
+            "type": "string",
+            "contentType": "markdown",
+            "translate": true
+          },
+          "method_syntax": {
+            "type": "string",
+            "translate": false
+          },
+          "params": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "translate": false
+                },
+                "datatype": {
+                  "type": "string",
+                  "translate": false
+                },
+                "required": {
+                  "type": "boolean",
+                  "translate": false
+                },
+                "desc": {
+                  "type": "string",
+                  "contentType": "markdown",
+                  "translate": true
+                }
+              }
+            }
+          },
+          "has_params": {
+            "type": "boolean",
+            "translate": false
+          },
+          "return_value": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "datatype": {
+                  "type": "string",
+                  "translate": false
+                },
+                "desc": {
+                  "type": "string",
+                  "contentType": "markdown",
+                  "translate": true
+                }
+              }
+            }
+          },
+          "has_return_value": {
+            "type": "boolean",
+            "translate": false
+          },
+          "code_samples": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "translate": true
+                },
+                "desc": {
+                  "type": "string",
+                  "contentType": "markdown",
+                  "translate": true
+                },
+                "sample": {
+                  "type": "string",
+                  "contentType": "markdown",
+                  "translate": false
+                }
+              }
+            }
+          },
+          "has_code_samples": {
+            "type": "boolean",
+            "translate": false
+          }
+        }
+      }
+    },
+    "has_methods": {
+      "type": "boolean",
+      "translate": false
+    },
+    "return_value": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "datatype": {
+            "type": "string",
+            "translate": false
+          },
+          "desc": {
+            "type": "string",
+            "contentType": "markdown",
+            "translate": true
+          }
+        }
+      }
+    },
+    "has_return_value": {
+      "type": "boolean",
+      "translate": false
+    },
+    "code_samples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "translate": true
+          },
+          "desc": {
+            "type": "string",
+            "contentType": "markdown",
+            "translate": true
+          },
+          "sample": {
+            "type": "string",
+            "contentType": "markdown",
+            "translate": false
+          }
+        }
+      }
+    },
+    "has_code_samples": {
+      "type": "boolean",
+      "translate": false
+    },
+    "related_topics": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string",
+            "description": "The URL of the related topic. MD link syntax ([<title>](<link>))",
+            "translate": true
+          }
+        }
+      }
+    },
+    "has_related_topics": {
+      "type": "boolean",
+      "translate": false
+    },
+    "related_topics_md": {
+      "type": "string",
+      "contentType": "markdown",
+      "translate": false
+    },
+    "training_samples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "translate": false
+          },
+          "sample": {
+            "type": "string",
+            "contentType": "markdown",
+            "translate": false
+          }
+        }
+      }
+    }
+  }
+}

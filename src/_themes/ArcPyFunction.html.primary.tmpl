@@ -1,0 +1,107 @@
+{{!master(layout/_master.tmpl)}}
+<h1 id="{{htmlId}}">
+  {{name}}
+</h1>
+
+{{>partials/versions}}
+{{>partials/affix-mobile}}
+
+{{#summary}}
+  <h2 id="summary">
+    {{__global.arcpySummary}}
+  </h2>
+
+  <div data-summary>
+    {{{summary}}}
+  </div>
+{{/summary}}
+
+{{#discussion}}
+  <h2 id="discussion">
+    {{__global.arcpyDiscussion}}
+  </h2>
+
+  <div data-disucssion>
+    {{{discussion}}}
+  </div>
+{{/discussion}}
+  
+<h2 id="syntax">
+  {{__global.arcpySyntax}}
+</h2>
+{{{syntax}}}
+
+{{#has_params}}
+  <table data-params-table="">
+    <tr>
+      <th>
+        {{__global.arcpyParameter}}
+      </th>
+      <th>
+        {{__global.arcpyExplanation}}
+      </th>
+      <th>
+        {{__global.arcpyDataType}}
+      </th>
+    </tr>
+    {{#params}}
+    <tr data-param-name="{{name}}">
+      <td>
+        <p><span data-label="">{{name}}</span></p>
+      </td>
+      <td data-desc="">
+        {{{desc}}}
+      </td>
+      <td>
+        <p><span data-datatype="">{{{datatype}}}</span></p>
+      </td>
+    </tr>
+    {{/params}}
+  </table>
+{{/has_params}}
+
+{{#has_return_value}}
+  <h2 id="return-value">
+    {{__global.gpReturnValue}}
+  </h2>
+  <table data-return-table>
+    <tr>
+      <th>
+        {{__global.arcpyDataType}}
+      </th>
+      <th>
+        {{__global.arcpyExplanation}}
+      </th>
+    </tr>
+    {{#return_value}}
+    <tr data-type>
+      <td>
+        <p><span data-datatype>{{datatype}}</span></p>
+      </td>
+      <td data-desc>
+          {{{desc}}}
+      </td>
+    </tr>
+    {{/return_value}}
+  </table>
+{{/has_return_value}}
+
+{{#has_code_samples}}
+  <h2 id="code-sample">
+    {{__global.arcpyCodeSample}}
+  </h2>
+  {{#code_samples}}
+    <div purpose="code-sample-title">
+      {{{title}}}
+    </div>
+    {{{desc}}}
+    {{{sample}}}
+  {{/code_samples}}
+{{/has_code_samples}}
+
+{{#related_topics_md}}
+  <h2 id="related-topics">
+    {{__global.gpRelatedTopics}}
+  </h2>
+  {{{related_topics_md}}}
+{{/related_topics_md}}

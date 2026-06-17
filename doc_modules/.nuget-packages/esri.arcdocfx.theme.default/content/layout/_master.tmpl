@@ -1,0 +1,177 @@
+{{!Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license.}}
+{{!include(/^public/.*/)}}
+{{!include(favicon.ico)}}
+<!DOCTYPE html>
+<html {{#_lang}}lang="{{_lang}}"{{/_lang}} {{#_dir}}dir="{{_dir}}"{{/_dir}} >
+  <head>
+    <meta charset="utf-8">
+    {{#redirect_url}}
+      <meta http-equiv="refresh" content="0;URL='{{redirect_url}}'">
+    {{/redirect_url}}
+    {{^redirect_url}}
+      <title>{{#page_title}}{{page_title}}{{/page_title}}{{^page_title}}{{>partials/title}}{{/page_title}}{{#_appTitle}} | {{_appTitle}}{{/_appTitle}}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="{{#page_title}}{{page_title}}{{/page_title}}{{^page_title}}{{>partials/title}}{{/page_title}}{{#_appTitle}} | {{_appTitle}}{{/_appTitle}}">
+      <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/public/assets/favicon/esri-favicon-light-180.png"/>
+      <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="32x32" href="/public/assets/favicon/esri-favicon-dark-32.png"/>
+      <link rel="icon" media="(prefers-color-scheme:light)" type="image/png" sizes="32x32" href="/public/assets/favicon/esri-favicon-light-32.png"/>
+      <link rel="icon" type="image/svg+xml" sizes="16x16 32x32 48x48 180x180" href="/public/assets/favicon/esri-favicon.svg"/>
+      {{>layout/styles}}
+      <meta name="docfx:navrel" content="{{_navRel}}">
+      <meta name="docfx:tocrel" content="{{_tocRel}}">
+      {{#_noindex}}<meta name="searchOption" content="noindex">{{/_noindex}}
+      {{#searchMode}}
+      <meta name="docfx:rel" content="{{_rel}}">
+      <meta name="docfx:searchmode" content="{{searchMode}}">
+      {{/searchMode}}
+      {{#_disableNewTab}}<meta name="docfx:disablenewtab" content="true">{{/_disableNewTab}}
+      {{#_disableTocFilter}}<meta name="docfx:disabletocfilter" content="true">{{/_disableTocFilter}}
+      {{#docurl}}<meta name="docfx:docurl" content="{{docurl}}">{{/docurl}}
+      <meta name="docfx:buildType" content={{buildType}}>
+      <meta name="docfx:envTier" content={{envTier}}>
+      {{#_enableProductBanner}}
+        <meta name="loc:bannerMessage" content="{{{__global.bannerMessage}}}">
+      {{/_enableProductBanner}}
+      <meta name="loc:appName" content="{{_appName}}">
+    {{/redirect_url}}
+    {{#metaTags}}
+      <meta name="{{name}}" content="{{content}}">
+    {{/metaTags}}
+    <!--- search MD -->
+    {{#description}}<meta name="description" content="{{description}}">{{/description}}
+    {{#lastModified}}<meta name="last-modified" content="{{lastModified}}">{{/lastModified}}
+    <meta name="product" content="{{searchProduct}}">
+    {{#searchQueryProduct}}<meta name="search-query-product" content="{{searchQueryProduct}}">{{/searchQueryProduct}}
+    <meta name="version" content="{{searchVersion}}">
+    <meta name="search-collection" content="help">
+    {{#subject}}<meta name="subject" content="{{subject}}">{{/subject}}
+    {{#subCategory}}<meta name="sub_category" content="{{subCategory}}">{{/subCategory}}
+    {{#contentType}}<meta name="content_type" content="{{contentType}}">{{/contentType}}
+    {{#_lang}}<meta name="content-language" content="{{_lang}}">{{/_lang}}
+    <!--- search MD -->
+    <!-- Pivots -->
+    {{#zone_pivot_groups}}<meta name="zone_pivot_groups" content="{{zone_pivot_groups}}">{{/zone_pivot_groups}}
+  </head>
+
+  {{^redirect_url}}
+
+  <script>
+    (function(){
+      const theme = localStorage.getItem('theme') || 'auto'
+      document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+    })();
+  </script>
+  
+  <body class="tex2jax_ignore {{buildType}}" data-layout="{{_layout}}{{layout}}" data-yaml-mime="{{yamlmime}}">
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div id="globalnav"></div>
+    <header class="bg-body">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="{{_appLogoUrl}}{{^_appLogoUrl}}{{_rel}}index.html{{/_appLogoUrl}}">
+            {{_appName}}
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="{{__global.toggleMenu}}">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    {{#_enableProductBanner}}
+    <div class="product-banner text-white {{searchProduct}}" {{#bannerColor}}style="background-color:#{{bannerColor}}"{{/bannerColor}}>
+      <div class="container-xxl">
+        <div class="row">
+          <div class="col-md-8 mt-5 mb-5">
+            <h1>{{title}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/_enableProductBanner}}
+
+    <div class="banner"></div>
+    
+    <div class="container-fluid">
+      <div class="row site-search">
+        <div class="col-md-5 mx-auto">
+          <form id="search-form" class="input-group" role="search">
+            <input class="form-control border-end-0 border" type="search" placeholder="{{_appSearch}}" id="search-query" aria-label="{{_appSearch}}" autocomplete="off">
+            <button class="btn btn-outline-secondary border-start-0 border ms-n5" id="site-search-btn" type="submit" aria-label="{{_appSearch}}">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <main class="container-xxl">
+    {{^_disableToc}}
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" role="navigation" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+    {{/_disableToc}}
+      <div class="content {{_contentCssClassAppend}}">
+        <div class="actionbar">
+          {{^_disableToc}}
+          <button class="btn btn-lg border-0 d-md-none" 
+              type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas"
+              aria-controls="tocOffcanvas" aria-expanded="false" aria-label="{{__global.tocToggleButton}}">
+            <i class="bi bi-list"></i>
+          </button>
+          {{/_disableToc}}
+          {{^_disableBreadcrumb}}
+          <nav id="breadcrumb"></nav>
+          {{/_disableBreadcrumb}}
+        </div>
+
+        <article data-uid="{{uid}}" id="main">
+          {{!body}}
+        </article>
+
+        <div id="feedback" class="feedback">
+        </div>
+
+        {{^_disableContribution}}
+        <div class="contribution d-print-none">
+          {{#sourceurl}}
+          <a href="{{sourceurl}}" class="edit-link">{{__global.improveThisDoc}}</a>
+          {{/sourceurl}}
+          {{^sourceurl}}{{#docurl}}
+          <a href="{{docurl}}" class="edit-link">{{__global.improveThisDoc}}</a>
+          {{/docurl}}{{/sourceurl}}
+        </div>
+        {{/_disableContribution}}
+
+        {{^_disableNextArticle}}
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        {{/_disableNextArticle}}
+
+      </div>
+      {{^_disableAffix}}
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+      {{/_disableAffix}}
+    </main>
+
+    
+    <div class="container-xxl search-results" id="search-results"></div>
+    <button class="back-2-top icon-ui-up-arrow-circled" aria-label="{{__global.back2Top}}">{{__global.back2Top}}</button>
+
+    <footer class="border-top text-secondary" id="globalfooter"></footer>
+    {{>layout/scripts}}
+  </body>
+  {{/redirect_url}}
+</html>

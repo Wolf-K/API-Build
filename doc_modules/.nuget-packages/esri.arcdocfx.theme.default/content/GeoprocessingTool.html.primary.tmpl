@@ -1,0 +1,327 @@
+{{!master(layout/_master.tmpl)}}
+<h1 id="{{htmlId}}">
+  {{label}} ({{toolbox_name}})
+</h1>
+
+{{>partials/versions}}
+{{>partials/affix-mobile}}
+
+{{#summary}}
+  <h2 id="summary">
+    {{__global.gpSummary}}
+  </h2>
+
+  <div data-summary>
+    {{{summary}}}
+  </div>
+{{/summary}}
+
+{{#tool_image}}
+  <h2 id="illustration">
+    {{__global.gpIllustration}}
+  </h2>
+  
+  <div data-tool-image>
+    {{{tool_image}}}
+  </div>
+{{/tool_image}}
+
+{{#usages}}
+  <h2 id="usage">
+    {{__global.gpUsage}}
+  </h2>
+
+  {{{usages}}}
+{{/usages}}
+
+<h2 id="parameters">
+  {{__global.gpParameters}}
+</h2>
+
+<div class="tabGroup" id="tabgroup_1">
+  <ul role="tablist">
+    <li role="presentation">
+      <a href="#tabpanel_1_dialog" role="tab" aria-controls="tabpanel_1_dialog" data-tab="dialog" tabindex="0" aria-selected="true">Dialog</a>
+    </li>
+    {{^is_model_builder_tool}}
+    <li role="presentation">
+      <a href="#tabpanel_1_python" role="tab" aria-controls="tabpanel_1_python" data-tab="python" tabindex="0" aria-selected="false">Python</a>
+    </li>
+    {{/is_model_builder_tool}}
+  </ul>
+  <section id="tabpanel_1_dialog" role="tabpanel" data-tab="dialog">
+    <table data-param-table="dialog">
+      <tr>
+        <th>
+          {{__global.gpLabel}}
+        </th>
+        <th>
+          {{__global.gpExplanation}}
+        </th>
+        <th>
+          {{__global.gpDataType}}
+        </th>
+      </tr>
+      {{#params}}
+      <tr data-param="{{name}}" data-param-category="{{category}}">  
+        <td>
+          <p><span data-label="">{{label}}</span></p>
+          {{^required}}
+            {{__global.gpOptional}}
+          {{/required}}
+        </td>
+        <td data-desc="">
+          {{#desc}}
+              {{{desc.desc_dialog}}}
+          {{/desc}}
+        </td>
+        <td>
+          <p><span data-datatype="">{{datatype}}</span></p>
+        </td>
+      </tr>
+      {{/params}}
+    </table>
+
+    {{#has_derived_output}}
+      <h3 id="derived-output">
+        {{__global.gpDerivedOutput}}
+      </h3>
+      <table data-derived-table="dialog">
+        <tr>
+          <th>
+            {{__global.gpLabel}}
+          </th>
+          <th>
+            {{__global.gpExplanation}}
+          </th>
+          <th>
+            {{__global.gpDataType}}
+          </th>
+        </tr>
+        {{#derived_output}}
+        <tr data-param="{{name}}">
+          <td>
+            <p>
+              <span data-label="">{{label}}</span>
+            </p>
+          </td>
+          <td data-desc="">
+            {{#desc}}
+              {{{desc.desc_dialog}}}
+            {{/desc}}
+          </td>
+          <td>
+            <p><span data-datatype="">{{datatype}}</span></p>
+          </td>
+        </tr>
+        {{/derived_output}}
+      </table>
+    {{/has_derived_output}}
+    
+    {{#has_return_value}}
+      <h3 id="return-value">
+        {{__global.gpReturnValue}}
+      </h3>
+      <table data-return-table="dialog">
+        <tr>
+          <th>
+            {{__global.gpLabel}}
+          </th>
+          <th>
+            {{__global.gpExplanation}}
+          </th>
+          <th>
+            {{__global.gpDataType}}
+          </th>
+        </tr>
+        {{#return_value}}
+        <tr data-param="{{name}}">
+          <td>
+            <p>
+              <span data-label="">{{label}}</span>
+            </p>
+          </td>
+          <td data-desc="">
+            {{#desc}}
+              {{{desc.desc_dialog}}}
+            {{/desc}}
+          </td>
+          <td>
+            <p><span data-datatype="">{{datatype}}</span></p>
+          </td>
+        </tr>
+        {{/return_value}}
+      </table>
+    {{/has_return_value}}
+  </section>
+  {{^is_model_builder_tool}}
+  <section id="tabpanel_1_python" role="tabpanel" data-tab="python" aria-hidden="true" hidden="hidden">
+    {{{python_syntax}}}
+    <table data-param-table="python">
+      <tr>
+        <th>
+          {{__global.gpName}}
+        </th>
+        <th>
+          {{__global.gpExplanation}}
+        </th>
+        <th>
+          {{__global.gpDataType}}
+        </th>
+      </tr>
+      {{#params}}
+      <tr data-param="{{name}}" data-param-category="{{category}}">
+        <td>
+          <p>
+            <span data-name="">{{name}}</span>
+            {{#expression_override}}
+              <span data-expression-hint="{{name}}">[{{expression_override}},...]</span>
+            {{/expression_override}}
+            {{^expression_override}}
+              {{#multivalue}}
+                <span data-expression-hint="{{name}}">[{{name}},...]</span>
+              {{/multivalue}}
+            {{/expression_override}}
+          </p>
+          {{^required}}
+            {{__global.gpOptional}}
+          {{/required}}
+        </td>
+        <td data-desc="">
+          {{#desc}}
+            {{{desc.desc_python}}}
+          {{/desc}}
+        </td>
+        <td>
+          <p><span data-datatype="">{{datatype}}</span></p>
+        </td>
+      </tr>
+      {{/params}}
+    </table>
+    
+    {{#has_derived_output}}
+      <h3 id="derived-output">
+        {{__global.gpDerivedOutput}}
+      </h3>
+      <table data-derived-table="python">
+        <tr>
+          <th>
+            {{__global.gpName}}
+          </th>
+          <th>
+            {{__global.gpExplanation}}
+          </th>
+          <th>
+            {{__global.gpDataType}}
+          </th>
+        </tr>
+        {{#derived_output}}
+        <tr data-param="{{name}}">
+          <td>
+            <p>
+              <span data-name="">{{name}}</span>
+            </p>
+          </td>
+          <td data-desc="">
+            {{#desc}}
+              {{{desc.desc_python}}}
+            {{/desc}}
+          </td>
+          <td>
+            <p><span data-datatype="">{{datatype}}</span></p>
+          </td>
+        </tr>
+        {{/derived_output}}
+      </table>
+    {{/has_derived_output}}
+    
+    {{#has_return_value}}
+      <h3 id="return-value">
+        {{__global.gpReturnValue}}
+      </h3>
+      <table data-return-table="python">
+        <tr>
+          <th>
+            {{__global.gpName}}
+          </th>
+          <th>
+            {{__global.gpExplanation}}
+          </th>
+          <th>
+            {{__global.gpDataType}}
+          </th>
+        </tr>
+        {{#return_value}}
+        <tr data-param="{{name}}">
+          <td>
+            <p>
+              <span data-name="{{name}}">{{name}}</span>
+            </p>
+          </td>
+          <td data-desc="{{name}}">
+            {{#desc}}
+              {{{desc.desc_python}}}
+            {{/desc}}
+          </td>
+          <td>
+            <p><span data-datatype="{{name}}">{{datatype}}</span></p>
+          </td>
+        </tr>
+        {{/return_value}}
+      </table>
+    {{/has_return_value}}
+    
+    {{#has_code_samples}}
+      <h3>
+        {{__global.gpCodeSample}}
+      </h3>
+      {{#code_samples}}
+        <div purpose="code-sample-title">
+          {{{title}}}
+        </div>
+        {{{desc}}}
+        {{{sample}}}
+      {{/code_samples}}
+    {{/has_code_samples}}
+  </section>
+  {{/is_model_builder_tool}}
+</div>
+
+<h2 id="environments">
+  {{__global.gpEnvironments}}
+</h2>
+{{#environments_md}}
+  {{{environments_md}}}
+  {{#env_special_cases_md}}
+  <h3 id="special-cases">
+    {{__global.gpSpecialCases}}
+  </h3> 
+    {{{env_special_cases_md}}}
+  {{/env_special_cases_md}}
+{{/environments_md}}
+{{^environments_md}}
+  <p>
+    {{{__global.gpNoEnvironments}}}
+  </p>
+{{/environments_md}}
+
+{{#licensing_md}}
+  <h2 id="licensing">
+    {{__global.gpLicensing}}
+  </h2>
+  {{{licensing_md}}}
+{{/licensing_md}}
+
+{{#references}}
+  <h2 id="references-list">
+    {{__global.gpReferences}}
+  </h2>
+    {{{references}}}
+{{/references}}
+
+{{#related_topics_md}}
+  <h2 id="related-topics">
+    {{__global.gpRelatedTopics}}
+  </h2>
+  {{{related_topics_md}}}
+{{/related_topics_md}}

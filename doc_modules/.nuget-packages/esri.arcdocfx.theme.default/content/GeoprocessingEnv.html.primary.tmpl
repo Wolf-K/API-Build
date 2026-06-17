@@ -1,0 +1,79 @@
+{{!master(layout/_master.tmpl)}}
+<h1 id="{{htmlId}}">
+  {{label}} ({{__global.gpEnvSetting}})
+</h1>
+
+{{>partials/versions}}
+{{>partials/affix-mobile}}
+
+{{{summary}}}
+
+{{#usages}}
+  <h2 id="usage-notes">
+    {{__global.gpEnvUsageNotes}}
+  </h2>
+
+  {{{usages}}}
+{{/usages}}
+
+{{#dialog_syntax}}
+  <h2 id="dialog-syntax">
+    {{__global.gpEnvDialogSyntax}}
+  </h2>
+  {{{dialog_syntax}}}
+{{/dialog_syntax}}
+
+{{#python_syntax}}
+  <h2 id="python-syntax">
+    {{__global.gpEnvPythonSyntax}}
+  </h2>
+  
+  {{{python_syntax}}}
+  
+  {{#has_params}}
+    <table data-param-table="python">
+      <tr>
+        <th>
+          {{__global.gpName}}
+        </th>
+        <th>
+          {{__global.gpExplanation}}
+        </th>
+      </tr>
+      {{#params}}
+      <tr data-param="{{name}}" data-param-category="{{category}}">
+        <td>
+          <p>
+            <span data-name="">{{name}}</span>
+          </p>
+        </td>
+        <td data-desc="">
+          {{#desc}}
+            {{{desc.desc_python}}}
+          {{/desc}}
+        </td>
+      </tr>
+      {{/params}}
+    </table>
+  {{/has_params}}
+
+  {{#has_code_samples}}
+    <h3>
+      {{__global.gpScriptingSyntax}}
+    </h3>
+    {{#code_samples}}
+      <div purpose="code-sample-title">
+        {{{title}}}
+      </div>
+      {{{desc}}}
+      {{{sample}}}
+    {{/code_samples}}
+  {{/has_code_samples}}
+{{/python_syntax}}
+
+{{#related_topics_md}}
+  <h2 id="related-topics">
+    {{__global.gpRelatedTopics}}
+  </h2>
+  {{{related_topics_md}}}
+{{/related_topics_md}}

@@ -1,0 +1,203 @@
+{
+  "$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+  "version": "1.0.0",
+  "id": "https://github.com/dotnet/docfx/schemas/geoprocessingenv.schema.json",
+  "title": "GeoprocessingEnv",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "lastModified": {
+      "type": "string",
+      "translate": false
+    },
+    "author": {
+      "type": "string",
+      "translate": false
+    },
+    "reviewer": {
+      "type": "string",
+      "translate": false
+    },
+    "watchlist": {
+      "type": "string",
+      "translate": false
+    },
+    "sdlPubGuid": {
+      "type": "string",
+      "translate": false
+    },
+    "sdlTpcGuid": {
+      "type": "string",
+      "translate": false
+    },
+    "uid": {
+      "type": "string",
+      "contentType": "uid",
+      "translate": false
+    },
+    "title": {
+      "type": "string",
+      "translate": true
+    },
+    "label": {
+      "type": "string",
+      "translate": true
+    },
+    "name": {
+      "type": "string",
+      "translate": false
+    },
+    "category": {
+      "type": "string",
+      "translate": true
+    },
+    "description": {
+      "type": "string",
+      "translate": true
+    },
+    "summary": {
+      "type": "string",
+      "contentType": "markdown",
+      "translate": true
+    },
+    "usages": {
+      "type": "string",
+      "contentType": "markdown",
+      "translate": true
+    },
+    "dialog_syntax": {
+      "type": "string",
+      "contentType": "markdown",
+      "translate": true
+    },
+    "dialog_syntax_md": {
+      "type": "string",
+      "contentType": "markdown",
+      "translate": false
+    },
+    "python_syntax": {
+      "type": "string",
+      "contentType": "markdown",
+      "translate": false
+    },
+    "params": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "translate": false
+          },
+          "label": {
+            "type": "string",
+            "translate": true
+          },
+          "desc": {
+            "type": "object",
+            "properties": {
+              "desc_all": {
+                "type": "string",
+                "contentType": "markdown",
+                "translate": true
+              },
+              "desc_dialog": {
+                "type": "string",
+                "contentType": "markdown",
+                "translate": true
+              },
+              "desc_python": {
+                "type": "string",
+                "contentType": "markdown",
+                "translate": true
+              }
+            }
+          },
+          "enums": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "enum_name": {
+                  "type": "string",
+                  "translate": false
+                },
+                "enum_label": {
+                  "type": "string",
+                  "translate": true
+                },
+                "enum_desc": {
+                  "type": "object",
+                  "properties": {
+                    "enum_desc_all": {
+                      "type": "string",
+                      "contentType": "markdown",
+                      "translate": true
+                    },
+                    "enum_desc_dialog": {
+                      "type": "string",
+                      "contentType": "markdown",
+                      "translate": true
+                    },
+                    "enum_desc_python": {
+                      "type": "string",
+                      "contentType": "markdown",
+                      "translate": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "code_samples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "contentType": "markdown",
+            "translate": true
+          },
+          "desc": {
+            "type": "string",
+            "contentType": "markdown",
+            "translate": true
+          },
+          "sample": {
+            "type": "string",
+            "contentType": "markdown",
+            "translate": false
+          }
+        }
+      }
+    },
+    "references": {
+      "type": "string",
+      "contentType": "markdown",
+      "translate": true
+    },
+    "related_topics": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string",
+            "description": "The URL of the related topic. MD link syntax ([<title>](<link>))",
+            "translate": true
+          }
+        }
+      }
+    },
+    "related_topics_md": {
+      "type": "string",
+      "contentType": "markdown",
+      "translate": false
+    }
+  }
+}

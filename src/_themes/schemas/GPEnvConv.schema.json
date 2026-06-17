@@ -1,0 +1,99 @@
+{
+  "$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+  "version": "1.0.0",
+  "id": "https://github.com/dotnet/docfx/schemas/gpenvconv.schema.json",
+  "title": "GPEnvConv",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "lastModified": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "watchlist": {
+      "type": "string"
+    },
+    "sdlPubGuid": {
+      "type": "string"
+    },
+    "sdlTpcGuid": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string",
+      "contentType": "uid"
+    },
+    "title": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string",
+      "contentType": "markdown"
+    },
+    "usages": {
+      "type": "string",
+      "contentType": "markdown"
+    },
+    "dialog_syntax": {
+      "type": "string",
+      "contentType": "markdown"
+    },
+    "python_syntax": {
+      "type": "string",
+      "contentType": "markdown"
+    },
+    "code_samples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string",
+            "contentType": "markdown"
+          },
+          "sample": {
+            "type": "string",
+            "contentType": "markdown"
+          }
+        }
+      }
+    },
+    "related_topics": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string",
+            "description": "The URL of the related topic. MD link syntax ([<title>](<link>))"
+          }
+        }
+      }
+    },
+    "related_topics_md": {
+      "type": "string",
+      "contentType": "markdown"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+    "docsets_to_publish": [
+        {
+            "docset_name": "api",
+            "build_source_folder": "src",
+            "build_output_subfolder": "api",
+            "locale": "en",
+            "is_default": true
+        }
+    ],
+    "template_folder": "_themes",
+    "output_path": "docset-build",
+    "global_metadata_files": [ "global_metadata.json" ],
+    "docfx": {
+        "extends": "_shared/docfx.json",
+        "config": {
+            "build": {
+                "globalMetadata": {
+                    "_appFaviconPath": "favicon.ico",
+                    "_disableNewTab": "true",
+                    "_disableNextArticle": "true",
+                    "_noindex": "false",
+                    "searchProduct": "arcgis-pro-net",
+                    "searchVersion": "3.7",
+                    "_appFooter": "Copyright © 2026 Esri"
+                }
+            }
+        }
+    },
+    "cli_version": "latest",
+    "dependent_repositories": [
+        {
+            "path_to_root": "_themes",
+            "url": "nuget:esri.arcdocfx.theme.default@branch:main"
+        },
+        {
+            "path_to_root": "_shared",
+            "url": "https://devtopia.esri.com/ArcGISPro/docs-shared.git",
+            "branch": "main"
+        },
+        {
+            "path_to_root": "_templates",
+            "url": "https://devtopia.esri.com/ArcGISPro/arcdoc-templates.git",
+            "branch": "main"
+        }
+    ]
+}

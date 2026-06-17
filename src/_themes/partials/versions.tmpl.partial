@@ -1,0 +1,4 @@
+{{#_showVersions}}
+<div id="version-switcher-container">
+</div>
+{{/_showVersions}}

@@ -1,0 +1,14 @@
+{{!Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license.}}
+{{! %entrypoint% is injected via webpack during build }}
+{{#useGlobalAssets}}
+<script src="/public/theme/vendors.bundle.js"></script>
+<script src="/public/theme/esri.web.default.bundle.js"></script>
+{{^isInstalledHelp}}
+<script type="module" src="/public/calcite/calcite.esm.js"></script>
+<script type="module" src="/public/documentation-assistant/index.js"></script>
+{{/isInstalledHelp}}
+{{/useGlobalAssets}}
+{{^useGlobalAssets}}
+<script src="{{_rel}}public/vendors.bundle.js"></script>
+<script src="{{_rel}}public/esri.web.default.bundle.js"></script>
+{{/useGlobalAssets}}
